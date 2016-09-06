@@ -13,7 +13,12 @@
                         <li class="blog"><a href="<?php echo base_url(); ?>index.php/Halaman">Blog</a></li>
                         <li class="about"><a href="<?php echo base_url(); ?>index.php/Halaman/viewAbout">About Us</a></li>
                         <li class="bantuan"><a href="<?php echo base_url(); ?>index.php/Halaman/viewBantuan">Bantuan</a></li>
-                        <?php 
+                        <?php if ($this->session->userdata('level')==2) {
+                            # code...
+                         ?>
+                        <li><a href="<?php echo base_url(); ?>index.php/Admin">Kelola Admin</a></li> 
+                        <?php
+                            } 
                             if ($this->session->userdata('level')==1) {
                                 # code...
                             
