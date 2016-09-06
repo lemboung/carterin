@@ -13,21 +13,33 @@
                         <li class="blog"><a href="<?php echo base_url(); ?>index.php/Halaman">Blog</a></li>
                         <li class="about"><a href="<?php echo base_url(); ?>index.php/Halaman/viewAbout">About Us</a></li>
                         <li class="bantuan"><a href="<?php echo base_url(); ?>index.php/Halaman/viewBantuan">Bantuan</a></li>
-                        <?php
-                        if ($this->session->has_userdata('username')) {
-                        		    	$username = $this->session->username;
-                                  ?>
-                                  <li><a href="<?php echo base_url(); ?>index.php/Member/viewKelolaMobil">Kelola Bisnis</a></li>
-                                  <li class="bantuan"><a href="<?php echo base_url(); ?>index.php/Member/logout">Log Out</a></li>
-                                  <?php
-                        } else {?>
-                          <li class="login">
-                              <a data-toggle="modal" href="#loginForm"><i class="icon-lock"> login</i></a>
-                          </li>
-                          <?php
-                        }?>
-                    </ul>
+                        <?php 
+                            if ($this->session->userdata('level')==1) {
+                                # code...
+                            
+                         ?><li><a href="<?php echo base_url(); ?>index.php/Member/viewKelolaMobil">Kelola Bisnis</a></li>
+                        <?php 
+                            }
+                            if ($this->session->userdata('level')==null) {
+                                # code...
+                            
+                         ?> 
+                        <li class="login">
+                            <a data-toggle="modal" href="#loginForm"><i class="icon-lock"> login</i></a>
+                        </li>
+                        <?php }else { ?>
+                        <li class="dropdown login">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('username'); ?>
+                            <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url(); ?>index.php/login/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                        <?php } ?>
+                    </ul>        
                 </div><!--/.nav-collapse -->
             </div>
         </div>
     </header>
+
+

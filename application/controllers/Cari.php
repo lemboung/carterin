@@ -1,4 +1,4 @@
-<?php
+2<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cari extends CI_Controller {
@@ -18,12 +18,23 @@ class Cari extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct(){
+		parent::__construct();
+		$this->load->model('ModelUser');
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		// $this->load->library('input');
+	}
+
 	public function index()
 	{
 		$this->load->view('listKendaraan');
 	}
 
-	public function viewKendaraan(){
-		$this->load->view('detailKendaraan');
+	public function prosesPencarian(){
+		$awal = $this->input->post('awal');
+		$day = date('Y', strtotime($awal));
+		echo "$day";
 	}
 }

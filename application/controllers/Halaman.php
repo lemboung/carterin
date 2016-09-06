@@ -19,14 +19,10 @@ class Halaman extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
- 	{
- 		$this->load->view('index');
- 	}
-	public function blog()
 	{
 		$this->load->view('blog');
 	}
-
+	
 	public function viewDetailBlog(){
 		$this->load->view('blog-item');
 	}

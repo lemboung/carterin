@@ -1,18 +1,21 @@
 .form-search {
-	padding-top: 20px;
-	margin-left: 20px;
+	margin: 10px 10px;
 }
 
 .search {
-	background-color: #FFF;
-	margin-top: 20px;
-	border-radius: 10px;
+	background-color:rgba(255,255,255,0.5);
+	margin-top: 40px;
+	border-radius: 5px;
+	padding: 10px;
+	z-index: 10000;
+	text-align: center;
 }
 
-.search h2 {
+.search h3 {
 	color: #2dcc70;
 	margin: 0px;
 	padding: 0px;
+	margin-bottom: 2%;
 }
 
 .widget-popular h2 {
@@ -22,8 +25,15 @@
 }
 
 .widget-popular .side-bar {
-	margin: 10px;
+	margin: 20px;
+
 	
+}
+
+.tes {
+	margin: 10px;
+	display: block;
+	float: left;
 }
 
 

@@ -23,15 +23,15 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">carterin Admin</span>
+                  <span class="hidden-xs"><?php echo $this->session->userdata('username'); ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      carterin
-                      <small>Admin</small>
+                      <?php echo $this->session->userdata('username'); ?>
+                      <small>Member</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
@@ -40,7 +40,7 @@
                       <a data-toggle="modal" href="#editAkun" class="btn btn-primary btn-flat">Edit Akun</a>
                     </div>
                     <div class="pull-right">
-                      <a href="<?php echo base_url()."login/proses_logout"; ?>" class="btn btn-danger btn-flat">Sign out</a>
+                      <a href="<?php echo base_url(); ?>index.php/login/logout" class="btn btn-danger btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>

@@ -18,49 +18,22 @@ class Member extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-
-	}
-
-	public function login(){
-		$username = $_POST['username'];
-		$data = $this->Cmodel->GetMember($username);
-		if (empty($data)) {
-			?>
-			<script type = "text/javascript">
-				document.location = '<?php echo base_url(); ?>index.php/';
-				alert("koneksi database gagal");
-			</script>
-			<?php
-		} else {
-			foreach ($data as $d) {
-				$username=$d['username'];
-				$pass=$d['pass'];
-			}
-
-			if (isset($_POST['username']) && isset($_POST['password'])) {
-				$u = $_POST['username'];
-				$p = $_POST['password'];
-				$p = md5($p);
-				if ($u==$username && $p==$pass) {
-					$_SESSION["username"]=$username;
-					redirect('Halaman');
-				} else {
-					?>
-					<script type = "text/javascript">
-						document.location = '<?php echo base_url(); ?>index.php/';
-						alert("Username atau Password salah !");
-					</script>
-					<?php
-				}
-			}
+	function __construct(){
+		parent::__construct();
+		$this->load->model('ModelUser');
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		if ($this->session->userdata('id_member') == null) {
+			redirect(site_url('Welcome'));
 		}
 	}
-	public function logout(){
-		session_destroy();
-		redirect('Halaman');
+
+	public function index()
+	{
+		
 	}
+
 	public function viewKelolaMobil(){
 		$this->load->view('kelolaKendaraan');
 	}
@@ -71,6 +44,10 @@ class Member extends CI_Controller {
 
 	public function viewKelolaKb(){
 		$this->load->view('kelolaKb');
+	}
+
+	public function viewKelolaJadwal(){
+		$this->load->view('kelolaJadwal');
 	}
 
 

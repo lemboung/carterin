@@ -12,7 +12,14 @@ require('css.php');
     <!--Header-->
    <?php require('header.php'); ?>
     <!-- /header -->
-
+    <?php if ($this->session->flashdata('notification')!=null) {
+        # code...
+     ?>
+    <div class="alert alert-warning alert-dismissible pull-right" role="alert" style="position:absolute; z-index:3;">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Warning!</strong> <?php echo $this->session->flashdata('notification')?>
+    </div>
+    <?php } ?>
     <!--Slider-->
     <section id="slide-show">
      <div id="slider" class="sl-slider-wrapper">
@@ -30,28 +37,69 @@ require('css.php');
                     <div class="container">
                         <div class="row">
                             <div class="span5 search">
-                                <form class="form-search" action="<?php echo base_url(); ?>/Cari" method="post" id="form-login">
-                                    <h2>Cari Mobil</h2>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
+                                <form class="form-search" action="<?php echo base_url(); ?>index.php/Cari/prosesPencarian" method="post" id="form-login">
+                                    <h3><b>Cari Mobil</b></h3>
+                                    <div class="form-group">
+                                        <input type="text" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
+                                      </div>
+                                    <div class="form-group tes">
+                                        <input type="date" name="awal" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
+                                      </div>
+                                      <div class="form-group tes">
+                                        <input type="date" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
+                                      </div>
+                                      <div class="form-group tes">
+                                        <select class="form-control" style="width: 100%;">
+                                          <option selected="selected">Tipe</option>
+                                          <option>Alaska</option>
+                                          <option>California</option>
+                                          <option>Delaware</option>
+                                          <option>Tennessee</option>
+                                          <option>Texas</option>
+                                          <option>Washington</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group tes">
+                                        <select class="form-control" style="width: 100%;">
+                                          <option selected="selected">Tahun</option>
+                                          <option>Alaska</option>
+                                          <option>California</option>
+                                          <option>Delaware</option>
+                                          <option>Tennessee</option>
+                                          <option>Texas</option>
+                                          <option>Washington</option>
+                                        </select>
+                                      </div>
+                                      <br>                   <br>
+                                      <br>                                      <br>
+                                      <br>
+                                      <div class="form-group tes">
+                                        driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver" style="float:none;">
+                                        jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput" style="float:none;">
+                                        antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
+
+                                      </div>
+                                    
+                                    <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="warna">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tempat duduk">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tahun">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="kota">
                                     <br>driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver">
                                     <br>jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput">
                                     <br>antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar">
-                                    <br><br><br><br>
+                                    <br><br><br><br> -->
+                                    <br><br><br><br><br>
 
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-lg tes" style="float: left;">Cari</button>
 
                                 </form>
 
                             </div>
-                            <div class="span7">
+                            <!-- <div class="span7">
                                 <img src="<?php echo base_url(); ?>style/images/sample/slider/img1.png" alt="" />
-                            </div>
+                            </div> -->
                         </div>
 
 
@@ -321,80 +369,19 @@ require('css.php');
 <?php require('footer.php'); ?>
 <!--/Footer-->
 
-<!--  Login form -->
-<div id="loginForm" class="modal hide fade in col-sm-3"  aria-hidden="false">
-    <div class="modal-header">
-        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-        <h4>Login Form</h4>
-    </div>
-    <!--Modal Body-->
-    <div class="modal-body">
-        <form class="form-inline" action="<?php echo base_url();?>index.php/member/login" method="post" id="form-login">
-            <input type="text" class="input-small" id="username" name="username" placeholder="username">
-            <input type="password" class="input-small" id="password" name="password" placeholder="Password">
-            <!-- <label class="checkbox">
-                <input type="checkbox"> Remember me
-            </label> -->
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-        <div class="register"><a data-toggle="modal" href="#registerForm">Register Now</a></div>
-    </div>
-    <!--/Modal Body-->
-</div>
-<!--  /Login form -->
 
-<!--  Register form -->
-<div id="registerForm" class="modal hide fade in col-sm-3" aria-hidden="false">
-    <div class="modal-header">
-        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-        <h4>Register Form</h4>
-    </div>
-    <!--Modal Body-->
-    <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-
-            <input type="email" class="form-control" id="email" placeholder="Email">
-            <input type="text" class="form-control" id="username" placeholder="Username">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-            <input type="password" class="form-control" id="confirm" placeholder="Confirm Password">
-            <input type="text" class="form-control" id="nama" placeholder="Nama">
-            <input type="text" class="form-control" id="Alamat" placeholder="Alamat">
-            <input type="text" class="form-control" id="Kota" placeholder="Kota">
-            <input type="number" class="form-control" id="notelp" placeholder="Nomor Telephone">
-            <input type="number" class="form-control" id="noktp" placeholder="No KTP">
-
-          <button type="submit" class="btn btn-default">Submit</button>
-
-        </form>
-
-        <!-- <form class="form" action="index.html" method="post">
-            <input type="text" class="" placeholder="username">
-            <input type="email" class="input-small" placeholder="Email">
-            <input type="password" class="input-small" placeholder="Password">
-            <input type="password" class="input-small" placeholder="Konfirmasi Password">
-
-            <label class="checkbox">
-                <input type="checkbox"> Remember me
-            </label>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-        <a href="#">Register Now</a> -->
-    </div>
-    <!--/Modal Body-->
-</div>
-<!--  /Register form -->
 <?php require('js.php'); ?>
 
 <!-- /Required javascript files for Slider -->
 
-<script type="text/javascript">
-    $(function(){
-        $(".register").on('click',function(){
-        // alert();
-        $('#loginForm').hide();
-        });
-    });
-</script>
+// <script type="text/javascript">
+//     $(function(){
+//         $(".register").on('click',function(){
+//         // alert();
+//         $('#loginForm').hide();
+//         });
+//     });
+// </script>
 <!-- SL Slider -->
 <script type="text/javascript">
 $(function() {

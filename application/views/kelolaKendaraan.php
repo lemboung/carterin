@@ -143,7 +143,7 @@
                       </ul>
                     </div>
                   </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
+                  <td><a href="<?php echo base_url(); ?>index.php/Member/viewKelolaJadwal"><button href="aaa.com" class="btn btn-primary btn-sm">Kelola Jadwal</button></a></td>
                 </tr>
                 <tr>
                   <td>Trident</td>
@@ -363,7 +363,7 @@
                   </ul>
                 </div>
                   </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
+                  <td><button class="btn btn-primary btn-sm" href="dada.com">Kelola Jadwal</button></td>
                 </tr>
 
                 </tbody>
