@@ -409,27 +409,27 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <?php echo form_open_multipart('Member/tambahPosting');?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Judul</label>
-                  <input type="text" class="form-control" id="judul" placeholder="Judul">
+                  <input type="text" name="judul" class="form-control" id="judul" placeholder="Judul">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Merek</label>
-                  <input type="text" class="form-control" id="merek" placeholder="Merek">
+                  <input type="text" name="merek" class="form-control" id="merek" placeholder="Merek">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tipe</label>
-                  <input type="text" class="form-control" id="tipe" placeholder="Tipe">
+                  <input type="text" name="tipe" class="form-control" id="tipe" placeholder="Tipe">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Warna</label>
-                  <input type="text" class="form-control" id="warna" placeholder="Warna">
+                  <input type="text" name="warna" class="form-control" id="warna" placeholder="Warna">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis</label>
-                  <select id="jenis">
+                  <select name="jenis" id="jenis">
                     <option value="mobil">Mobil</option>
                     <option value="motor">Motor</option>
                     <option value="kendaraanbesar">Kendaraan Besar</option>
@@ -437,17 +437,17 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Kota</label>
-                  <input type="text" class="form-control" id="kota" placeholder="Kota">
+                  <input type="text" name="kota" class="form-control" id="kota" placeholder="Kota">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jumlah Tempat Duduk</label>
-                  <input type="number" class="form-control" id="seat">
+                  <input type="number" name="seater" class="form-control" id="seat">
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> Sopir <br>
-                    <input type="checkbox"> Antar <br>
-                    <input type="checkbox"> Jemput <br>
+                    <input name="driver" type="checkbox"> Sopir <br>
+                    <input name="antar" type="checkbox"> Antar <br>
+                    <input name="jemput" type="checkbox"> Jemput <br>
                   </label>
                 </div>
                 <div class="form-group">
