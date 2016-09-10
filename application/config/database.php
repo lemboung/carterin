@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql.idhostinger.com',
-	'username' => 'u519357758_carte',
-	'password' => 'admincarterin',
-	'database' => 'u519357758_carte',
+	'hostname' => 'ap-cdbr-azure-east-c.cloudapp.net',
+	'username' => 'b002733bb707e3',
+	'password' => 'fef3990a',
+	'database' => 'carterin',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
