@@ -104,276 +104,48 @@
                   <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Merk</th>
-                  <th>Tahun</th>
-                  <th>Harga</th>
+                  <th>Judul</th>
+                  <th>Merek</th>
+                  <th>Tipe</th>
                   <th>Status</th>
-                  <th>Jadwal</th>
+                  <th>Harga</th>
+                  <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-danger">Available</button>
-                      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Available</a></li>
-                        <li><a href="#">Booked</a></li>
-                        <li><a href="#">Not Available</a></li>
-                      </ul>
-                    </div>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-danger">Action</button>
-                      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a data-toggle="modal" href="#editUnit">edit</a></li>
-                        <li><a href="#">Delete</a></li>
-                      </ul>
-                    </div>
-                  </td>
-                  <td><a href="<?php echo base_url(); ?>index.php/Member/viewKelolaJadwal"><button href="aaa.com" class="btn btn-primary btn-sm">Kelola Jadwal</button></a></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm">Kelola Jadwal</button></td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>
-                    <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Available</button>
-                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Available</a></li>
-                    <li><a href="#">Booked</a></li>
-                    <li><a href="#">Not Available</a></li>
-                  </ul>
-                </div>
-                  </td>
-                  <td><button class="btn btn-primary btn-sm" href="dada.com">Kelola Jadwal</button></td>
-                </tr>
-
+                  <?php foreach ($posting as $d) { ?>
+                  <tr>
+                    <td><?php echo $d->judul; ?></td>
+                      <td><?php echo $d->merek; ?></td>
+                      <td><?php echo $d->tipe; ?></td>
+                      <td><?php echo $d->status; ?></td>
+                      <td><?php echo $d->harga; ?></td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-danger">Action</button>
+                          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo base_url()."Member/kelolaJadwal".$d->id_posting; ?>">kelola Jadwal</a></li>
+                            <li><a href="<?php echo base_url()."Member/detail_posting".$d->id_posting; ?>">detail</a></li>
+                            <li><a href="#editUnit">Edit</a></li>
+                            <li><a href="<?php echo base_url()."Member/delete_posting".$d->id_posting; ?>">Hapus</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                  </tr>
+                  <?php } ?>
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Judul</th>
+                  <th>Merek</th>
+                  <th>Tipe</th>
+                  <th>Status</th>
+                  <th>Harga</th>
+                  <th>Aksi</th>
                 </tr>
                 </tfoot>
               </table>
@@ -402,70 +174,7 @@
       <div id="tambahUnit" class="modal fade in col-sm-6"  aria-hidden="false">
 
           <!--Modal Body-->
-          <div class="modal-body">
-              <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Tambah Unit</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <?php echo form_open_multipart('Member/tambahPosting');?>
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Judul</label>
-                  <input type="text" name="judul" class="form-control" id="judul" placeholder="Judul">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Merek</label>
-                  <input type="text" name="merek" class="form-control" id="merek" placeholder="Merek">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Tipe</label>
-                  <input type="text" name="tipe" class="form-control" id="tipe" placeholder="Tipe">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Warna</label>
-                  <input type="text" name="warna" class="form-control" id="warna" placeholder="Warna">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jenis</label>
-                  <select name="jenis" id="jenis">
-                    <option value="mobil">Mobil</option>
-                    <option value="motor">Motor</option>
-                    <option value="kendaraanbesar">Kendaraan Besar</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Kota</label>
-                  <input type="text" name="kota" class="form-control" id="kota" placeholder="Kota">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jumlah Tempat Duduk</label>
-                  <input type="number" name="seater" class="form-control" id="seat">
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input name="driver" type="checkbox"> Sopir <br>
-                    <input name="antar" type="checkbox"> Antar <br>
-                    <input name="jemput" type="checkbox"> Jemput <br>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">Foto Kendaraan</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">ukuran file max 2MB</p>
-                </div>
-
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-          </div>
+          <?php Include 'formTambahKendaraan.php'; ?>
           <!--/Modal Body-->
       </div>
       <!--  /Tambah Unit -->
@@ -474,70 +183,7 @@
       <div id="editUnit" class="modal fade in col-sm-6"  aria-hidden="false">
 
           <!--Modal Body-->
-          <div class="modal-body">
-              <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Edit Unit</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Judul</label>
-                  <input type="text" class="form-control" id="judul" placeholder="Judul">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Merek</label>
-                  <input type="text" class="form-control" id="merek" placeholder="Merek">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Tipe</label>
-                  <input type="text" class="form-control" id="tipe" placeholder="Tipe">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Warna</label>
-                  <input type="text" class="form-control" id="warna" placeholder="Warna">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jenis</label>
-                  <select id="jenis">
-                    <option value="mobil">Mobil</option>
-                    <option value="motor">Motor</option>
-                    <option value="kendaraanbesar">Kendaraan Besar</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Kota</label>
-                  <input type="text" class="form-control" id="kota" placeholder="Kota">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jumlah Tempat Duduk</label>
-                  <input type="number" class="form-control" id="seat">
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Sopir <br>
-                    <input type="checkbox"> Antar <br>
-                    <input type="checkbox"> Jemput <br>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">Foto Kendaraan</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">ukuran file max 2MB</p>
-                </div>
-
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-          </div>
+          <?php Include 'formEditKendaraan.php'; ?>
           <!--/Modal Body-->
       </div>
       <!--  /Edit Unit -->

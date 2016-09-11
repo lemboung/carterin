@@ -61,7 +61,7 @@
             <input type="text" name="kota" class="form-control" id="Kota" placeholder="Kota">
             <input type="number" name="no_telp" class="form-control" id="notelp" placeholder="Nomor Telephone">
             <input type="number" name="noktp" class="form-control" id="noktp" placeholder="No KTP">
-            <br>Foto <input type="file" name="userfile" size="20" />
+            <br>Foto <input type="file" name="foto" size="20" />
           <button type="submit" class="btn btn-default" value="upload">Submit</button>
 
         </form>

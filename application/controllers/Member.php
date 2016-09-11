@@ -21,6 +21,7 @@ class Member extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('ModelUser');
+		$this->load->model('ModelPosting');
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -31,7 +32,7 @@ class Member extends CI_Controller {
 
 	public function index()
 	{
-		
+
 	}
 
 	public function tambahPosting(){
@@ -43,42 +44,85 @@ class Member extends CI_Controller {
 
 		 $this->load->library('upload', $config);
 
-		 if (!$this->upload->do_upload()){
-			 $error = array('error'=>$this->upload->display_errors());
-			 // $this->load->view('Admin/form_blog_add', $error);
-		 	// echo "$error";
-			echo $error['error'];	 
+		 if (!$this->upload->do_upload('file')){
+			 $data['id_member'] = $this->session->userdata('id_member');
+			 $data['judul'] = $this->input->post('judul');
+			 if ($this->input->post('driver')=="1") {
+			 	$data['driver'] = "1";
+			 }
+			 $data['harga'] = $this->input->post('harga');
+			 $data['jenis'] = $this->input->post('jenis');
+			 $data['merek'] = $this->input->post('merek');
+			 $data['tipe'] = $this->input->post('tipe');
+			 $data['seater'] = $this->input->post('seater');
+			 $data['warna'] = $this->input->post('warna');
+			 $data['deskripsi'] = $this->input->post('deskripsi');
+			 $data['kota'] = $this->input->post('kota');
+			 if ($this->input->post('antar')=="1") {
+			 	$data['antar'] = "1";
+			 }
+			 if ($this->input->post('ambil')=="1") {
+			 	$data['ambil'] = "1";
+			 }
+			 $cek = $this->ModelPosting->insert_posting($data);
+		 	 if ($cek == null) {
+		 	 	echo "error insert";
+		 	 }
+		 	 redirect(site_url('Member/viewKelolaMobil'));
 		 }
 		 else {
 			 $upload_data = $this->upload->data();
 			 $data['gambar'] = $upload_data['file_name'];
-			 $data['isi'] = $this->input->post('isi');
+			 $data['id_member'] = $this->session->userdata('id_member');
 			 $data['judul'] = $this->input->post('judul');
+			 if ($this->input->post('driver')=="1") {
+			 	$data['driver'] = "1";
+			 }
+			 $data['harga'] = $this->input->post('harga');
+			 $data['jenis'] = $this->input->post('jenis');
+			 $data['merek'] = $this->input->post('merek');
+			 $data['tipe'] = $this->input->post('tipe');
+			 $data['seater'] = $this->input->post('seater');
+			 $data['warna'] = $this->input->post('warna');
+			 $data['deskripsi'] = $this->input->post('deskripsi');
+			 $data['kota'] = $this->input->post('kota');
+			 if ($this->input->post('antar')=="1") {
+			 	$data['antar'] = "1";
+			 }
+			 if ($this->input->post('ambil')=="1") {
+			 	$data['ambil'] = "1";
+			 }
 			 // $upload_data['username'] = $judul;
 			 // $data = array('upload_data' => $upload_data);
 
 			 // print_r($data);
 			 // $this->load->view('tes', $data);
-			 $cek = $this->ModelBlog->insert_blog($data);
+			 $cek = $this->ModelPosting->insert_posting($data);
 		 	 if ($cek == null) {
 		 	 	echo "error insert";
 		 	 }
-		 	 redirect(site_url('Admin'));
+		 	 redirect(site_url('Member/viewKelolaMobil'));
 
 		 }
 
 	}
 
 	public function viewKelolaMobil(){
-		$this->load->view('kelolaKendaraan');
+		$id = $this->session->userdata('id_member');
+		$data['posting'] = $this->ModelPosting->select_member_mobil($id)->result();
+		$this->load->view('kelolaKendaraan', $data);
 	}
 
 	public function viewKelolaMotor(){
-		$this->load->view('kelolaMotor');
+		$id = $this->session->userdata('id_member');
+		$data['posting'] = $this->ModelPosting->select_member_motor($id)->result();
+		$this->load->view('kelolaMotor', $data);
 	}
 
 	public function viewKelolaKb(){
-		$this->load->view('kelolaKb');
+		$id = $this->session->userdata('id_member');
+		$data['posting'] = $this->ModelPosting->select_member_kb($id)->result();
+		$this->load->view('kelolaKb', $data);
 	}
 
 	public function viewKelolaJadwal(){

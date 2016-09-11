@@ -43,7 +43,7 @@ class Login extends CI_Controller {
 
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-		
+
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->load->view('index');
@@ -79,7 +79,7 @@ class Login extends CI_Controller {
 	}
 
 	public function register(){
-		 
+
 		 $config['upload_path'] = './images/member/';
 		 $config['allowed_types'] = 'gif|jpg|png';
 		 $config['max_size'] = '100';
@@ -88,7 +88,7 @@ class Login extends CI_Controller {
 
 		 $this->load->library('upload', $config);
 
-		 if (!$this->upload->do_upload()){
+		 if (!$this->upload->do_upload('foto')){
 			 $error = array('error'=>$this->upload->display_errors());
 			 $this->load->view('Index', $error);
 		 	// echo "error";
