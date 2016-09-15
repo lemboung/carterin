@@ -35,6 +35,11 @@ class Member extends CI_Controller {
 
 	}
 
+	public function edit_posting($id){
+		$data['form'] = $this->ModelPosting->select_by_id($id)->result();
+		$this->load->view('editKendaraan', $data);
+	}
+
 	public function tambahPosting(){
 		$config['upload_path'] = './images/posting/';
 		 $config['allowed_types'] = 'gif|jpg|png';

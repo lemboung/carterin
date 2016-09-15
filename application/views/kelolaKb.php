@@ -127,14 +127,14 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?php echo base_url()."Member/kelolaJadwal".$d->id_posting; ?>">kelola Jadwal</a></li>
-                                <li><a href="<?php echo base_url()."Member/detail_posting".$d->id_posting; ?>">detail</a></li>
-                                <li><a href="#editUnit">Edit</a></li>
-                                <li><a href="<?php echo base_url()."Member/delete_posting".$d->id_posting; ?>">Hapus</a></li>
+                                <li><a href="<?php echo base_url()."Member/kelolaJadwal/".$d->id_posting; ?>">kelola Jadwal</a></li>
+                                <li><a href="<?php echo base_url()."Member/detailPosting/".$d->id_posting; ?>">detail</a></li>
+                                <li><a href="<?php echo base_url()."Member/editPosting/".$d->id_posting; ?>">Edit</a></li>
+                                <li><a href="<?php echo base_url()."Member/deletePosting/".$d->id_posting; ?>">Hapus</a></li>
                               </ul>
                             </div>
                           </td>
-                      </tr>
+                      </tr>s
                       <?php } ?>
                     </tbody>
                     <tfoot>

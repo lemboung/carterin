@@ -35,13 +35,14 @@ class Login extends CI_Controller {
 
 	// memeriksa keberadaan akun username
 	public function login(){
-		$username = $this->input->post('email', 'true');
-		$password = $this->input->post('password', 'true');
+		$username = $this->input->post('username', 'true');
+		$p = $this->input->post('password', 'true');
+		$password = md5($p);
 		$temp_account = $this->ModelUser->check_user_account($username, $password)->row();
 		// check account
 		$num_account = count($temp_account);
 
-		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
 		if ($this->form_validation->run() == FALSE)
@@ -82,9 +83,9 @@ class Login extends CI_Controller {
 
 		 $config['upload_path'] = './images/member/';
 		 $config['allowed_types'] = 'gif|jpg|png';
-		 $config['max_size'] = '100';
-		 $config['max_width'] = '1024';
-		 $config['max_height'] = '768';
+		 $config['max_size'] = '2000';
+		 //  $config['max_width'] = '1024';
+		//  $config['max_height'] = '768';
 
 		 $this->load->library('upload', $config);
 
@@ -97,7 +98,8 @@ class Login extends CI_Controller {
 			 $upload_data = $this->upload->data();
 			 $data['foto'] = $upload_data['file_name'];
 			 $data['username'] = $this->input->post('username');
-			 $data['pass'] = $this->input->post('pass');
+			 $p = $this->input->post('pass');
+			 $data['pass'] = md5($p);
 			 $data['email'] = $this->input->post('email');
 			 $data['nama'] = $this->input->post('nama');
 			 $data['alamat'] = $this->input->post('alamat');

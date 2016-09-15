@@ -128,10 +128,10 @@
                             <span class="sr-only">Toggle Dropdown</span>
                           </button>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="<?php echo base_url()."Member/kelolaJadwal".$d->id_posting; ?>">kelola Jadwal</a></li>
-                            <li><a href="<?php echo base_url()."Member/detail_posting".$d->id_posting; ?>">detail</a></li>
-                            <li><a href="#editUnit">Edit</a></li>
-                            <li><a href="<?php echo base_url()."Member/delete_posting".$d->id_posting; ?>">Hapus</a></li>
+                            <li><a href="<?php echo base_url()."Member/kelolaJadwal/".$d->id_posting; ?>">kelola Jadwal</a></li>
+                            <li><a href="<?php echo base_url()."Member/detailPosting/".$d->id_posting; ?>">detail</a></li>
+                            <li><a href="<?php echo base_url()."Member/edit_posting/".$d->id_posting; ?>">Edit</a></li>
+                            <li><a href="<?php echo base_url()."Member/deletePosting/".$d->id_posting; ?>">Hapus</a></li>
                           </ul>
                         </div>
                       </td>
@@ -216,6 +216,42 @@
           "autoWidth": false
         });
       });
+      function edit_person(id)
+      {
+          save_method = 'update';
+          $('#form')[0].reset(); // reset form on modals
+          $('.form-group').removeClass('has-error'); // clear error class
+          $('.help-block').empty(); // clear error string
+
+          //Ajax Load data from ajax
+          $.ajax({
+              url : "<?php echo site_url('Member/edit_post/')?>/" + id,
+              type: "GET",
+              dataType: "JSON",
+              success: function(data)
+              {
+                  $('[name="judul"]').val(data.judul);
+                  $('[name="merek"]').val(data.merek);
+                  $('[name="tipe"]').val(data.tipe);
+                  $('[name="warna"]').val(data.warna);
+                  $('[name="Jenis"]').val(data.jenis);
+                  $('[name="kota"]').val(data.kota);
+                  $('[name="seater"]').val(data.seater);
+                  $('[name="deskripsi"]').val(data.deskripsi);
+                  $('[name="harga"]').val(data.harga);
+                  $('[name="sopir"]').val(data.sopir);
+                  $('[name="antar"]').val(data.antar);
+                  $('[name="ambil"]').val(data.ambil);
+                  $('#formEditKendaraan').modal('show'); // show bootstrap modal when complete loaded
+                  // $('.modal-title').text('Edit Person'); // Set title to Bootstrap modal title
+
+              },
+              error: function (jqXHR, textStatus, errorThrown)
+              {
+                  alert('Error get data from ajax');
+              }
+          });
+      }
     </script>
   </body>
 </html>

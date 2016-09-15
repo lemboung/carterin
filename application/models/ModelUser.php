@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 class ModelUser extends CI_Model {
-	 
+
 	 function __construct(){
 	 parent::__construct();
 	 }
@@ -9,7 +9,7 @@ class ModelUser extends CI_Model {
 	 function check_user_account($username, $password){
 		 $this->db->select('*');
 		 $this->db->from('member');
-		 $this->db->where('email', $username);
+		 $this->db->where('username', $username);
 		 $this->db->where('pass', $password);
 
 		 return $this->db->get();
@@ -24,8 +24,6 @@ class ModelUser extends CI_Model {
 	 }
 	 //menambahkan data user ke table
 	 function insert_user($data){
-		 // echo $data['username'];
-		 // echo $data['file_name'];
 		 $this->db->insert('member', $data);
 
  	 }
