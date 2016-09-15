@@ -45,10 +45,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="<?php echo base_url()."images/member".$foto ?>" class="img-circle" alt="User Image">
+            <img src="<?php echo base_url()."images/membet".$foto ?>" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p><?php echo $username</p>
+            <p><?php echo $username ?></p>
           </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -103,86 +103,44 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Kelola Motor</h3>
+                <h3 class="box-title">Edit Akun</h3>
               </div><!-- /.box-header -->
-              <?php echo form_open_multipart('Member/updatePosting');
-              foreach ($form as $f) {?>
+              <?php echo form_open_multipart('Member/updateAkun');
+              foreach ($member as $m) {?>
               <div class="box-body">
-                <input type="text" name="id_posting" value="<?php echo $f->id_posting; ?>" hidden/>
+                <input type="text" name="id_member" value="<?php echo $m->id_member; ?>" hidden/>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Judul</label>
-                  <input type="text" name="judul" class="form-control" id="judul" value="<?php echo $f->judul; ?>">
+                  <label for="exampleInputEmail1">Username</label>
+                  <input type="text" name="username" class="form-control" value="<?php echo $m->username; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Merek</label>
-                  <input type="text" name="merek" class="form-control" id="merek" value="<?php echo $f->merek; ?>">
+                  <label for="exampleInputEmail1">no. Telepon</label>
+                  <input type="number" name="no_telp" class="form-control" value="<?php echo $m->no_telp; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Tipe</label>
-                  <input type="text" name="tipe" class="form-control" id="tipe" value="<?php echo $f->tipe; ?>">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" name="email" class="form-control" value="<?php echo $m->email; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Warna</label>
-                  <input type="text" name="warna" class="form-control" id="warna" value="<?php echo $f->warna; ?>">
+                  <p class="help-block">jika anda tidak ingin ganti password, kosongkan saja</p>
+                  <label for="exampleInputEmail1">Password</label>
+                  <input type="password" name="pass" class="form-control" placeholder="Password">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Jenis</label>
-                  <select name="jenis" id="jenis">
-                    <option value="mobil">Mobil</option>
-                    <option value="motor">Motor</option>
-                    <option value="kendaraanbesar">Kendaraan Besar</option>
-                  </select>
+                  <label for="exampleInputEmail1">Konfirmasi Password</label>
+                  <input type="password" name="pass" class="form-control" placeholder="Konfirmasi Password">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Kota</label>
-                  <input type="text" name="kota" class="form-control" id="kota" value="<?php echo $f->kota; ?>">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jumlah Tempat Duduk</label>
-                  <input type="number" name="seater" class="form-control" id="seat" value="<?php echo $f->seater; ?>">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Deskripsi</label>
-                  <input type="textbox" name="deskripsi" class="form-control" id="textbox" value="<?php echo $f->deskripsi; ?>">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Harga</label>
-                  <input type="number" name="harga" class="form-control" id="harga" value="<?php echo $f->harga; ?>">
-                </div>
-                <div class="checkbox">
-                  <label><?php
-                  //cek tercentang atau tidak
-                    if ($f->driver == 1) {
-                      echo "<input name=\"driver\" type=\"checkbox\" checked value=1> Sopir <br>";
-                    }
-                    else {
-                      echo "<input name=\"driver\" type=\"checkbox\" value=1> Sopir <br>";
-                    }
-                    if ($f->antar == 1) {
-                      echo "<input name=\"antar\" type=\"checkbox\" checked value=1> Antar <br>";
-                    }
-                    else {
-                      echo "<input name=\"antar\" type=\"checkbox\" value=1> Antar <br>";
-                    }
-                    if ($f->ambil == 1) {
-                      echo "<input name=\"ambil\" type=\"checkbox\" checked value=1> Ambil <br>";
-                    }
-                    else {
-                      echo "<input name=\"ambil\" type=\"checkbox\" value=1> Ambil <br>";
-                    }?>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label>Foto Kendaraan</label>
+                  <label>Foto Profil</label>
                   <?php
-                    if ($f->gambar != "no image") { ?>
-                      <br><img src="<?php echo base_url("/images/posting/$f->gambar"); ?>" style="height: 100px; width: 100px"><br><small>preview image</small><br>
-                      <input type="file" id="exampleInputFile" name="gambar">
+                    if ($m->foto != "no image") { ?>
+                      <br><img src="<?php echo base_url("/images/member/$m->foto"); ?>" style="height: 100px; width: 100px"><br><small>preview image</small><br>
+                      <input type="file" id="exampleInputFile" name="foto">
                       <p class="help-block">ukuran file max 2MB</p>
                       <?php
-                    } elseif ($f->gambar == "no image") { ?>
+                    } elseif ($m->foto == "no image") { ?>
                       <center><br>no image<br><small>preview image</small><br></center>
-                      <input type="file" id="exampleInputFile" name="gambar">
+                      <input type="file" id="exampleInputFile" name="foto">
                       <p class="help-block">ukuran file max 2MB</p>
                       <?php } ?>
                   </div>

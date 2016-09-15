@@ -15,10 +15,17 @@ class ModelUser extends CI_Model {
 		 return $this->db->get();
 	 }
 	// mengambil data user tertentu
-	 function get_user($id_user){
+	 function get_user($id){
 		 $this->db->select('*');
-		 $this->db->from('user');
-		 $this->db->where('id_user', $id_user);
+		 $this->db->from('member');
+		 $this->db->where('id_member', $id);
+
+		 return $this->db->get();
+	 }
+
+	 function select_all(){
+		 $this->db->select('*');
+		 $this->db->from('member');
 
 		 return $this->db->get();
 	 }
@@ -27,5 +34,15 @@ class ModelUser extends CI_Model {
 		 $this->db->insert('member', $data);
 
  	 }
+
+	 function update_user($id, $data){
+		$this->db->where('id_member', $id);
+		$this->db->update('member', $data);
+	}
+
+	function delete_user($id){
+		$this->db->where('id_member', $id);
+		$this->db->delete('member');
+	}
 }
 ?>

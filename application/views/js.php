@@ -6,7 +6,7 @@
     </div>
     <!--Modal Body-->
     <div class="modal-body">
-        <form class="form-inline" action="<?php echo base_url(); ?>index.php/Login/login" method="post" id="form-login">
+        <form class="form-inline" action="<?php echo base_url(); ?>/Login/login" method="post" id="form-login">
             <input type="text" name="username" class="input-small" placeholder="Username" required>
             <input type="password" name="password" class="input-small" placeholder="Password" required>
             <!-- <label class="checkbox">
@@ -27,7 +27,7 @@
     </div>
     <!--Modal Body-->
     <div class="modal-body">
-        <!-- <form class="form-inline" action="<?php echo base_url(); ?>index.php/Login/register" method="post" id="form-login"> -->
+        <!-- <form class="form-inline" action="<?php echo base_url(); ?>/Login/register" method="post" id="form-login"> -->
         <?php echo form_open_multipart('Login/register');?>
             <input type="email" name="email" class="form-control" id="email" placeholder="Email">
             <input type="text" name="username" class="form-control" id="username" placeholder="Username">

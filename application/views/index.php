@@ -37,7 +37,7 @@ require('css.php');
                     <div class="container">
                         <div class="row">
                             <div class="span5 search">
-                                <form class="form-search" action="<?php echo base_url(); ?>index.php/Cari/prosesPencarian" method="post" id="form-login">
+                                <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
                                     <h3><b>Cari Mobil</b></h3>
                                     <div class="form-group">
                                         <input type="text" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
@@ -79,7 +79,7 @@ require('css.php');
                                         antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
 
                                       </div>
-                                    
+
                                     <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">

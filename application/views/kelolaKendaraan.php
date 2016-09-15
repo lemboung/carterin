@@ -31,7 +31,13 @@
   <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
 
-      <?php require('headerMember.php'); ?>
+      <?php require('headerMember.php');
+      $foto = '';
+      $username = '';
+      foreach ($member as $m) {
+        $foto = $m->foto;
+        $username = $m->username;
+      } ?>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -39,10 +45,10 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo base_url()."images/member/".$foto ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>carterin</p>
+              <p><?php echo $username; ?></p>
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -55,17 +61,17 @@
             </li>
             <li >
             <li class=" active treeview">
-                <a href=<?php echo base_url()."index.php/member/viewKelolaMobil";?>
+                <a href=<?php echo base_url()."/member/viewKelolaMobil";?>
                   <i class="fa fa-laptop"></i> <span>Mobil</span>
                 </a>
             </li>
             <li class=" treeview">
-                <a href=<?php echo base_url()."index.php/member/viewKelolaMotor"; ?>
+                <a href=<?php echo base_url()."/member/viewKelolaMotor"; ?>
                   <i class="fa fa-files-o"></i> <span>Motor</span>
                 </a>
             </li>
             <li class=" treeview">
-                <a href=<?php echo base_url()."index.php/member/viewKelolaKb"; ?>
+                <a href=<?php echo base_url()."/member/viewKelolaKb"; ?>
                   <i class="fa fa-th"></i> <span>Kendaraan Besar</span>
                 </a>
             </li>
@@ -130,7 +136,7 @@
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="<?php echo base_url()."Member/kelolaJadwal/".$d->id_posting; ?>">kelola Jadwal</a></li>
                             <li><a href="<?php echo base_url()."Member/detailPosting/".$d->id_posting; ?>">detail</a></li>
-                            <li><a href="<?php echo base_url()."Member/edit_posting/".$d->id_posting; ?>">Edit</a></li>
+                            <li><a href="<?php echo base_url()."Member/editPosting/".$d->id_posting; ?>">Edit</a></li>
                             <li><a href="<?php echo base_url()."Member/deletePosting/".$d->id_posting; ?>">Hapus</a></li>
                           </ul>
                         </div>

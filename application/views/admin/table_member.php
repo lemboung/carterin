@@ -154,22 +154,33 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <?php foreach ($data as $d) { ?>
-                      <tr>
-                        <td><?php echo $d['nama_makanan']; ?></td>
-                        <td><?php echo $d['desc_makanan']; ?></td>
-                        <?php if ($d['pict_makanan'] != "") { ?>
-                          <td><center><img src="<?php echo base_url("/style/image/menu/$d[pict_makanan]");?>" style="height: 100px; width: 100px"/></center></td>
-                        <?php } else { ?>
-                          <td>no image</td>
-                        <?php } ?>
-                        <td><?php echo $d['kategori_makanan']; ?></td>
-                        <td>
-
-                          <a href="<?php echo base_url()."kelola_member/do_delete/".$d['id_menu']; ?>">Delete</a>
-                        </td>
-                      </tr>
-                      <?php } ?> -->
+                      <?php foreach ($member as $m) { ?>
+                        <tr>
+                          <td><?php echo $m->username; ?></td>
+                          <td><?php echo $m->alamat; ?></td>
+                          <td><?php if ($m->foto == null) {
+                            echo "no image";
+                          } else {
+                            ?>
+                            <div class="image">
+                              <img src="<?php echo base_url(); ?>images/member/<?php echo $m->foto; ?>" class ="img-circle" style="height:50px; width:50px;">
+                            </div>
+                            <?php
+                          } ?></td>
+                          <td>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-danger">Action</button>
+                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo base_url("")."index.php/Admin/deleteMember/".$m->id_member;?>">Delete</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                          </tr>
+                      <?php } ?>
                     </tbody>
                     <tfoot>
                       <tr>
