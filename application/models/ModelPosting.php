@@ -14,16 +14,21 @@ class ModelPosting extends CI_Model {
 	 function select_all(){
 	 	$this->db->select('*');
 		$this->db->from('posting');
-		// $this->db->order_by('date_modified', 'desc');
+		$this->db->join('member', 'id_member = member_id');
 		return $this->db->get();
-		// $data = $this->db->query('select * from blog');
-		// return $data->result_array();
+	 }
+
+	 function select_8_post(){
+	 	$this->db->select('*');
+		$this->db->from('posting');
+		$this->db->limit(8);
+		return $this->db->get();
 	 }
 
 	 function select_member_mobil($id_member){
 	 	$this->db->select('*');
 		$this->db->from('posting');
-		$this->db->where('id_member', $id_member);
+		$this->db->where('member_id', $id_member);
 		$this->db->where('jenis', "mobil");
 		return $this->db->get();
 	 }
@@ -31,7 +36,7 @@ class ModelPosting extends CI_Model {
 	 function select_member_motor($id_member){
 	 	$this->db->select('*');
 		$this->db->from('posting');
-		$this->db->where('id_member', $id_member);
+		$this->db->where('member_id', $id_member);
 		$this->db->where('jenis', "motor");
 		return $this->db->get();
 	 }
@@ -39,7 +44,7 @@ class ModelPosting extends CI_Model {
 	 function select_member_kb($id_member){
 	 	$this->db->select('*');
 		$this->db->from('posting');
-		$this->db->where('id_member', $id_member);
+		$this->db->where('member_id', $id_member);
 		$this->db->where('jenis', "kendaraanbesar");
 		return $this->db->get();
 	 }

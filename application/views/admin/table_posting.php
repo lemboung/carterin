@@ -28,6 +28,12 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <?php
+  $fotoAdmin = '';
+  foreach ($admin as $a ){
+    $fotoAdmin = $a->foto;
+  } ?>
+
   <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
 
@@ -35,7 +41,7 @@
         <!-- Logo -->
         <a href="<?php echo base_url("")."home_admin"; ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><center><b>G</b></center></span>
+          <span class="logo-mini"><center><b>C</b></center></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>carterin's</b> Admin</span>
         </a>
@@ -50,13 +56,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="<?php echo base_url()."images/member/".$fotoAdmin ?>" class="user-image" alt="User Image">
                   <span class="hidden-xs">carterin Admin</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="<?php echo base_url()."images/member/".$fotoAdmin ?>" class="img-circle" alt="User Image">
                     <p>
                       carterin
                       <small>Admin</small>
@@ -81,10 +87,10 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?php echo base_url()."style/admin/" ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo base_url()."images/member/".$fotoAdmin ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>carterin</p>
+              <p>carterin admin</p>
             </div>
           </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -153,15 +159,18 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <?php foreach ($data as $d) { ?>
+                      <?php foreach ($posting as $p) { ?>
                       <tr>
-                        <td><?php echo $d['kategori_makanan']; ?></td>
+                        <td><?php echo $p->judul; ?></td>
+                        <td><?php echo $p->username; ?></td>
+                        <td><?php echo $p->timestamp; ?></td>
+                        <td><img src='<?php echo base_url()."images/posting/".$p->gambar; ?>' style='height:50px; width:50px;'></td>
                         <td>
-                          
-                          <a href="<?php echo base_url()."kelola_posting/do_delete/".$d['id_kategori_makanan']; ?>">Delete</a>
+
+                          <a href="<?php echo base_url()."Admin/deletePosting/".$p->id_member; ?>">Delete</a>
                         </td>
                       </tr>
-                      <?php } ?> -->
+                      <?php } ?>
                     </tbody>
                     <tfoot>
                       <tr>

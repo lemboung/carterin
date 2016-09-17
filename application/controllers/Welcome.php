@@ -23,11 +23,13 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+		$this->load->model('ModelPosting');
 	}
 
 
 	public function index()
 	{
-		$this->load->view('index');
+		$data['posting'] = $this->ModelPosting->select_8_post()->result();
+		$this->load->view('index', $data);
 	}
 }

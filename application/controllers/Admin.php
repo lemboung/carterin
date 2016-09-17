@@ -33,7 +33,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function index(){
+		$id = $this->session->userdata('id_member');
 		$data['blog'] = $this->ModelBlog->select_all()->result();
+		$data['admin'] = $this->ModelUser->get_user($id)->result();
 		$this->load->view('Admin/table_blog',$data);
 	}
 
@@ -81,7 +83,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function viewTableMember(){
+		$id = $this->session->userdata('id_member');
 		$data['member'] = $this->ModelUser->select_all()->result();
+		$data['admin'] = $this->ModelUser->get_user($id)->result();
 		$this->load->view('Admin/table_member', $data);
 	}
 
@@ -91,7 +95,15 @@ class Admin extends CI_Controller {
 	}
 
 	public function viewTablePosting(){
+		$id = $this->session->userdata('id_member');
 		$data['posting'] = $this->ModelPosting->select_all()->result();
+		$data['admin'] = $this->ModelUser->get_user($id)->result();
 		$this->load->view('Admin/table_posting', $data);
 	}
+
+	public function deletePosting($id){
+		$this->ModelPosting->delete_posting($id);
+		redirect(site_url('Admin/viewTableMember'));
+	}
+
 }

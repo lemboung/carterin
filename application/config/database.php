@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'carterin',
+	'hostname' => 'mysql.idhostinger.com',
+	'username' => 'u519357758_carte',
+	'password' => 'admincarterin',
+	'database' => 'u519357758_carte',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
