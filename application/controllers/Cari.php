@@ -22,7 +22,7 @@ class Cari extends CI_Controller {
 		parent::__construct();
 		$this->load->model('ModelUser');
 		$this->load->model('Cmodel');
-		$this->load->model('modelPosting');
+		$this->load->model('ModelPosting');
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
