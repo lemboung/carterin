@@ -31,89 +31,90 @@ require('css.php');
     <!--/Slider Next Prev button-->
         <!--Slider Items-->
         <div class="sl-slider">
-            <!--Slider Item1-->
-            <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+
+          <div class="sl-slide item1" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                 <div class="sl-slide-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="span5 search">
-                                <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
-                                    <h3><b>Cari Mobil</b></h3>
-                                    <div class="form-group">
-                                        <input type="text" name="cari" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
-                                      </div>
-                                    <div class="form-group tes">
-                                        <input type="date" name="awal" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
-                                      </div>
-                                      <div class="form-group tes">
-                                        <input type="date" name="akhir" class="input-block-level" placeholder="Tanggal" style="width:100%;">
-                                      </div>
-                                      <div class="form-group tes">
-                                        <select name="jenis" class="form-control" style="width: 100%;">
-                                          <option selected="selected">Jenis</option>
-                                          <option>Kendaraan Besar</option>
-                                          <option>Mobil</option>
-                                          <option>Motor</option>
-                                        </select>
-                                      </div>
-                                      <div class="form-group tes">
-                                        <select name="kota" class="form-control" style="width: 100%;">
-                                          <option selected="selected">Kota</option>
 
-                                          <option>Surabaya</option>
-                                          <option>Malang</option>
-                                          <option>Jakarta</option>
-                                          <option>Yogyakarta</option>
-                                        </select>
-                                      </div>
-                                      <!-- <br>                   <br>
-                                      <br>                                      <br>
-                                      <br>
-                                      <div class="form-group tes">
-                                        driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver" style="float:none;">
-                                        jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput" style="float:none;">
-                                        antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
+                        <img class="pull-right" src="<?php echo base_url(); ?>/style/images/sample/slider/img2.jpg">
 
-                                      </div>
- -->
-                                    <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="warna">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tahun">
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="kota">
-                                    <br>driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver">
-                                    <br>jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput">
-                                    <br>antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar">
-                                    <br><br><br><br> -->
-                                    <br><br><br><br><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg tes" style="float: left;">Cari</button>
+                </div>
+            </div>
+            <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                  <div class="sl-slide-inner">
 
-                                </form>
+                          <img class="pull-right" src="<?php echo base_url(); ?>/style/images/sample/slider/img1.jpg">
 
-                            </div>
-                            <!-- <div class="span7">
-                                <img src="<?php echo base_url(); ?>style/images/sample/slider/img1.png" alt="" />
-                            </div> -->
-                        </div>
+
+                  </div>
+              </div>
+              <div class="sl-slide item3" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                    <div class="sl-slide-inner">
+
+                            <img class="pull-right" src="<?php echo base_url(); ?>/style/images/sample/slider/img4.jpg">
 
 
                     </div>
                 </div>
-            </div>
-            <!--/Slider Item1-->
+            <div class="span5 search">
+                <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
+                    <h3><b>Cari Mobil</b></h3>
+                    <div class="form-group">
+                        <input type="text" name="cari" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
+                      </div>
+                    <div class="form-group tes">
+                        <input type="date" name="awal" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
+                      </div>
+                      <div class="form-group tes">
+                        <input type="date" name="akhir" class="input-block-level" placeholder="Tanggal" style="width:100%;">
+                      </div>
+                      <div class="form-group tes">
+                        <select name="jenis" class="form-control" style="width: 100%;">
+                          <option selected="selected">Jenis</option>
+                          <option>Kendaraan Besar</option>
+                          <option>Mobil</option>
+                          <option>Motor</option>
+                        </select>
+                      </div>
+                      <div class="form-group tes">
+                        <select name="kota" class="form-control" style="width: 100%;">
+                          <option selected="selected">Kota</option>
 
-            <!--Slider Item2-->
-          <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                <div class="sl-slide-inner">
-                    <div class="container">
-                        <img class="pull-right" src="<?php echo base_url(); ?> /style/images/sample/slider/img2.jpg">
+                          <option>Surabaya</option>
+                          <option>Malang</option>
+                          <option>Jakarta</option>
+                          <option>Yogyakarta</option>
+                        </select>
+                      </div>
+                      <!-- <br>                   <br>
+                      <br>                                      <br>
+                      <br>
+                      <div class="form-group tes">
+                        driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver" style="float:none;">
+                        jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput" style="float:none;">
+                        antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
 
-                    </div>
-                </div>
+                      </div>
+-->
+                    <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="warna">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tahun">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="kota">
+                    <br>driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver">
+                    <br>jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput">
+                    <br>antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar">
+                    <br><br><br><br> -->
+                    <br><br><br><br><br>
+
+                    <button type="submit" class="btn btn-primary btn-lg tes" style="float: left;">Cari</button>
+
+                </form>
+
             </div>
-            <!--Slider Item2-->
+            <!-- <div class="span7">
+            <!Slider Item2-->
 
             <!--Slider Item3-->
 
@@ -134,8 +135,8 @@ require('css.php');
 <section id="recent-works">
     <div class="container">
         <div class="center">
-            
-            <p class="lead">Iklan Kendaraan</p>
+
+            <h3 class="lead">Iklan Kendaraan</h3>
         </div>
         <div class="gap"></div>
         <ul class="gallery col-4">
@@ -198,7 +199,7 @@ require('css.php');
                         <a class="prev" href="#myCarousel" data-slide="prev"><i class="icon-angle-left icon-large"></i></a> <a class="next" href="#myCarousel" data-slide="next"><i class="icon-angle-right icon-large"></i></a>
                     </div>
                 </div>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                
             </div>
             <div class="span10">
                 <div id="myCarousel" class="carousel slide clients">
