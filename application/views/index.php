@@ -56,7 +56,7 @@ require('css.php');
 
                     </div>
                 </div>
-            <div class="span5 search">
+            <div class="span5 searching">
                 <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
                     <h3><b>Cari Mobil</b></h3>
                     <div class="form-group">
@@ -199,7 +199,7 @@ require('css.php');
                         <a class="prev" href="#myCarousel" data-slide="prev"><i class="icon-angle-left icon-large"></i></a> <a class="next" href="#myCarousel" data-slide="next"><i class="icon-angle-right icon-large"></i></a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="span10">
                 <div id="myCarousel" class="carousel slide clients">

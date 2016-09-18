@@ -149,7 +149,7 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label>Judul Blog</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Service" name="judul" required>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul" name="judul" required>
                     </div>
                     <!-- <div class="form-group">
                       <label>Kategori Blog</label>
