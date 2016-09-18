@@ -225,6 +225,8 @@ class Member extends CI_Controller {
 
 	public function editPosting($id){
 		$data['form'] = $this->ModelPosting->select_by_id($id)->result();
+		$id = $this->session->userdata('id_member');
+		$data['member'] = $this->ModelUser->get_user($id)->result();
 		$this->load->view('editKendaraan', $data);
 	}
 
@@ -258,6 +260,8 @@ class Member extends CI_Controller {
 	public function viewKelolaJadwal(){
 		$this->load->view('kelolaJadwal');
 	}
+
+	
 
 
 

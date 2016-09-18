@@ -155,7 +155,7 @@ require('css.php');
                     <div class="overlay">
                     </div>
                     <div class="links">
-                        <a data-toggle="modal" href="<?php echo base_url()."Member/detailKendaraan/".$p->id_posting; ?>"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-link"></i></a>
+                        <a data-toggle="modal" href="<?php echo base_url()."Cari/detailKendaraan/".$p->id_posting; ?>"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-link"></i></a>
                     </div>
                 </div>
                 <div class="desc">

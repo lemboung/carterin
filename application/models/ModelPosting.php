@@ -52,6 +52,7 @@ class ModelPosting extends CI_Model {
 	 function select_by_id($id_post){
 	 	$this->db->select('*');
 		$this->db->from('posting');
+		$this->db->join('member', 'id_member = member_id');
 		$this->db->where('id_posting', $id_post);
 		return $this->db->get();
 	 }

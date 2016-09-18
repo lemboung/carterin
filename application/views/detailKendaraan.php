@@ -8,7 +8,24 @@
 <body>
 
     <!--Header-->
-    <?php require('header.php'); ?>
+    <?php require('header.php');
+    $judul ; $username; $jenis; $merek; $tipe; $harga; $timestamp; $seater; $warna; $deskripsi; $gambar; $kota;
+    foreach ($kendaraan as $k) {
+      $judul = $k->judul;
+      $username = $k->username;
+      $jenis = $k->jenis;
+      $merek = $k->merek;
+      $tipe = $k->tipe;
+      $harga = $k->harga;
+      $timestamp = $k->timestamp;
+      $seater = $k->seater;
+      $warna = $k->warna;
+      $deskripsi = $k->deskripsi;
+      $gambar = $k->gambar;
+      $kota = $k->kota;
+    }
+
+    ?>
     <!-- /header -->
 
     <section id="about-us" class="container main">
@@ -26,15 +43,34 @@
             <div class="span8">
                 <div class="blog">
                     <div class="blog-item well">
-                        <a href="#"><h2>AVANZA 2007</h2></a>
+                        <a href="#"><h2><?php echo $judul; ?></h2></a>
                         <div class="blog-meta clearfix">
                             <p class="pull-left">
-                              <i class="icon-user"></i> by <a href="#">Carter Sby</a> | <i class="icon-folder-close"></i> Category <a href="#">Mobil</a> | <i class="icon-calendar"></i> 16 Sept 2009 - 20 Sept 2009
+                              <i class="icon-user"></i> by <a href="#"><?php echo $username; ?></a> | <i class="icon-folder-close"></i> jenis kendaraan <a href="#"><?php echo $jenis; ?></a> | <i class="icon-calendar"></i> <?php echo $timestamp; ?>
                           </p>
-                          <p class="pull-right"><i class="icon-comment pull"></i> <a href="blog-item.html#comments">3 Comments</a></p>
+                          <p class="pull-right"><i class="icon-comment pull"></i> kota <a href="blog-item.html#comments"><?php echo $kota; ?></a></p>
                       </div>
-                      <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" width="100%" alt="" /></p>
-                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                      <p><img src="<?php echo base_url()."images/posting/".$gambar; ?>" width="100%" alt="" /></p>
+                      <table>
+                        <tr>
+                          <td> merek : </td> <td> <?php echo $merek; ?><td>
+                        </tr>
+                        <tr>
+                          <td>tipe : </td><td> <?php echo $tipe; ?></td>
+                        </tr>
+                        <tr>
+                          <td>jumlah tempat duduk : </td> <td><?php echo $seater; ?></td>
+                        </tr>
+                        <tr>
+                          <td>harga : </td> <td><?php echo $harga; ?></td>
+                        </tr>
+                        <tr>
+                          <td>warna : </td> <td><?php echo $warna; ?></td>
+                        </tr>
+                        <tr>
+                          <td>deskripsi : </td><td><?php echo $deskripsi; ?></td>
+                        </tr>
+                      </table>
                       <a href="<?php echo base_url(); ?>index.php/Cari/viewKendaraan"><button type="button" class="btn btn-primary">Booking</button></a>
                   </div>
                   <!-- End Blog Item -->

@@ -21,6 +21,7 @@ class Cari extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('ModelUser');
+		$this->load->model('ModelPosting');
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -30,6 +31,11 @@ class Cari extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('listKendaraan');
+	}
+
+	public function detailKendaraan($id){
+		$data['kendaraan'] = $this->ModelPosting->select_by_id($id)->result();
+		$this->load->view('detailKendaraan', $data);
 	}
 
 	public function prosesPencarian(){
