@@ -134,7 +134,7 @@ require('css.php');
 <section id="recent-works">
     <div class="container">
         <div class="center">
-            <h3>Get A Big Discount</h3>
+            
             <p class="lead">Iklan Kendaraan</p>
         </div>
         <div class="gap"></div>
