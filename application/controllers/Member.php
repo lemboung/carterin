@@ -46,7 +46,7 @@ class Member extends CI_Controller {
 		 $this->load->library('upload', $config);
 
 		 if (!$this->upload->do_upload('file')){
-			 $data['id_member'] = $this->session->userdata('id_member');
+			 $data['member_id'] = $this->session->userdata('id_member');
 			 $data['judul'] = $this->input->post('judul');
 			 if ($this->input->post('driver')=="1") {
 			 	$data['driver'] = "1";
@@ -74,7 +74,7 @@ class Member extends CI_Controller {
 		 else {
 			 $upload_data = $this->upload->data();
 			 $data['gambar'] = $upload_data['file_name'];
-			 $data['id_member'] = $this->session->userdata('id_member');
+			 $data['member_id'] = $this->session->userdata('id_member');
 			 $data['judul'] = $this->input->post('judul');
 			 if ($this->input->post('driver')=="1") {
 			 	$data['driver'] = "1";
@@ -119,7 +119,7 @@ class Member extends CI_Controller {
 		 $this->load->library('upload', $config);
 
 		 if (!$this->upload->do_upload('file')){
-			 $data['id_member'] = $this->session->userdata('id_member');
+			 $data['member_id'] = $this->session->userdata('id_member');
 			 $data['judul'] = $this->input->post('judul');
 			 if ($this->input->post('driver')=="1") {
 			 	$data['driver'] = "1";
