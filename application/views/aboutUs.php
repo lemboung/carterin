@@ -18,38 +18,33 @@
                     <h1>About Us</h1>
                 </div>
                 <div class="span6">
-                    
+
                 </div>
             </div>
         </div>
     </section>
-    <!-- / .title -->   
+    <!-- / .title -->
 
-    <section id="about-us" class="container main">
+    <section id="about-us" class="container main about">
         <div class="row-fluid">
             <div class="span6">
                 <h2>Tentang <b>CARTERIN</b></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Carterin merupakan sebuah aplikasi persewaan kendaraan secara online berbasis web.Carterin merupakan aplikasi persewaan kendaraan pertama di Indonesia
+                  yang menerapkan model bisnis customer to customer  terbilang baru di Indonesia. selain menerapkan model customer to customer, carterin juga dapat menangani
+                  model business to customer dan juga business to business. Sehingga perusahaan seperti rental mobil ataupun persewaan kendaraan berat dapat mempromosikan kendaraannya melalui  carterin.
+                  Carterin memiliki berbagai macam fitur mulai dari menyewa  kendaraan,manajemen kendaraan yang disewakan dan juga fitur blog.pengguna dapat
+                  mencari kendaraan berdasarkan parameter yang diinginkan mulai dari jenis kendaraan ,lokasi kendaraan,dan waktu tersedia.pengguna yang ingin menyewakan
+                  kendaraannya dapat mengelola kendaraan yang disewakannya.mulai dari menambah dan mengedit kendaraan, mengedit waktu tersedianya kendaraan,dan mengelola status kendaraan.
+                  fitur blog merupakan fitur yang berfungsi untuk mengetahui informasi mengenai tindak
+                  kriminal dan penyalahgunaan terhadap persewaan mobil.fitur blog juga berfungsi sebagai wadah bertukar informasi  antar member. .</p>
             </div>
             <div class="span6">
-                <h2>Advantege</h2>
+                <h2>Keutungan Carterin </h2>
                 <div>
-                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Kecepatan</div></div>
-                    <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Kenyamanan</div></div>
-                    <div class="progress progress-info"><div class="bar" style="width: 60%; text-align:left; padding-left:10px;">Gampang Digunakan</div></div>
-                    <div class="progress progress-danger"><div class="bar" style="width: 90%; text-align:left; padding-left:10px;">Otherr</div></div>
+                    <div class="progress"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Gratis </div></div>
+                    <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Aman</div></div>
+                    <div class="progress progress-info"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">mudah digunakan </div></div>
+
                 </div>
             </div>
         </div>
@@ -62,47 +57,40 @@
         <hr>
 
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span4">
                 <div class="box">
                     <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" alt="" ></p>
-                    <h5>Leonard M. Spurlock</h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <h5>Miftakhur Rizqi</h5>
+                    <p>Project Manager</p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
                 </div>
             </div>
 
-            <div class="span3">
+            <div class="span4">
                 <div class="box">
                     <p><img src="<?php echo base_url(); ?>style/images/sample/team2.jpg" alt="" ></p>
-                    <h5>David J. Robbins</h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <h5>Tri Wahyu Herlambang</h5>
+                    <p>Business development </p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
                 </div>
             </div>
 
-            <div class="span3">
+            <div class="span4">
                 <div class="box">
                     <p><img src="<?php echo base_url(); ?>style/images/sample/team4.jpg" alt="" ></p>
-                    <h5>Thomas M. Morgan</h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <h5>M.Rifqi Ramadhani</h5>
+                    <p>Human Relationship</p>
                     <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
                 </div>
             </div>
 
-            <div class="span3">
-                <div class="box">
-                    <p><img src="<?php echo base_url(); ?>style/images/sample/team3.jpg" alt="" ></p>
-                    <h5>Agustin E. Hightower</h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
-                    <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-                </div>
-            </div>
+
         </div>
         <p>&nbsp;</p>
         <p></p>
         <hr>
 
-        
+
 </section>
 
 <!--Bottom-->
