@@ -33,16 +33,17 @@
         <div class="row-fluid">
 
           <aside class="span4">
-                  <div class="widget search">
+                  <!-- <div class="widget search">
                       <form>
                           <input type="text" class="input-block-level" placeholder="Search">
+
                       </form>
-                  </div>
+                  </div> -->
 
                   <div class="widget widget-popular search">
                       <h2>Cari Mobil</h2>
                       <div class="side-bar">
-                      <form class="form-inline form-search" action="index.html" method="post" id="form-login">
+                      <!-- <form class="form-inline form-search" action="index.html" method="post" id="form-login">
                     
                                               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
@@ -52,7 +53,44 @@
                                               <br>
                                               <button type="submit" class="btn btn-primary">Submit</button>
                                         
-                                          </form>
+                                          </form> -->
+                      <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
+                                    <div class="form-group">
+                                        <input type="text" name="cari" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
+                                      </div>
+                                    <div class="form-group tes">
+                                        <input type="date" name="awal" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
+                                      </div>
+                                      <div class="form-group tes">
+                                        <input type="date" name="akhir" class="input-block-level" placeholder="Tanggal" style="width:100%;">
+                                      </div>
+                                      
+                                      <!-- <br>                   <br>
+                                      <br>                                      <br>
+                                      <br>
+                                      <div class="form-group tes">
+                                        driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver" style="float:none;">
+                                        jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput" style="float:none;">
+                                        antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
+
+                                      </div>
+ -->
+                                    <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="warna">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tahun">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="kota">
+                                    <br>driver  <input type="checkbox" class="form-checkbox" id="exampleInputEmail1" name="driver">
+                                    <br>jemput  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="jemput">
+                                    <br>antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar">
+                                    <br><br><br><br> -->
+                                    <br><br><br><br><br>
+
+                                    <button type="submit" class="btn btn-primary btn-lg tes" style="float: left;">Cari</button>
+
+                                </form>
+
                       </div>
                                               
                   </div>
@@ -84,78 +122,32 @@
 
             <div class="span8">
                 <div class="blog">
+
+                <?php foreach ($hasil as $data) {
+                  # code...
+                 ?>
                 <div class="span5">
                     <div class="blog-item well">
-                        <a href="#"><h4><b>AVANZA 2007</b></h4></a>
+                        <a href="#"><h4><b><?php echo $data['judul'];?></b></h4></a>
                         <div class="blog-meta clearfix">
                             <p class="pull-left">
-                              <i class="icon-user"></i> by <a href="#">Carter Sby</a> | <i class="icon-folder-close"></i> Category <a href="#">Mobil</a> | <i class="icon-calendar"></i> 12 Sept 2016 - 14 Sept 2016
+                              <i class="icon-user"></i> by <a href="#"><?php echo $data['username'];?></a> | <i class="icon-folder-close"></i> Jenis <a href="#"><?php echo $data['jenis'];?></a> | <i class="icon-calendar"></i> post <?php echo $data['timestamp']; ?>
                           </p>
-                          <p class="pull-right"><i class="icon-comment pull"></i> Rp 100.000 / Hari </a></p>
+                          <p class="pull-right"><i class="pull"></i> Rp <?php echo $data['harga'];?> / Hari </a></p>
                       </div>
-                      <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" width="100%" alt="" /></p>
+                      <p><img src="<?php echo base_url().'images/posting/'.$data['gambar']; ?>" width="100%" alt="" /></p>
                       <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, </p>
                       <!-- <a class="btn btn-link" href="#">Read More <i class="icon-angle-right"></i></a> -->
                       <button type="button" class="btn btn-primary">Booking</button>
-                      <a href="<?php echo base_url(); ?>index.php/Cari/viewKendaraan"><button type="button" class="btn btn-primary">Detail</button></a>
+                      <a href="<?php echo base_url(); ?>index.php/Cari/detailKendaraan/<?php echo $data['id_posting'];?>"><button type="button" class="btn btn-primary">Detail</button></a>
 
                   </div>
                   </div>
+                  <?php } ?>
 
-                  <div class="span5">
-                    <div class="blog-item well">
-                        <a href="#"><h4><b>AVANZA 2007</b></h4></a>
-                        <div class="blog-meta clearfix">
-                            <p class="pull-left">
-                              <i class="icon-user"></i> by <a href="#">Carter Sby</a> | <i class="icon-folder-close"></i> Category <a href="#">Mobil</a> | <i class="icon-calendar"></i> 12 Sept 2016 - 14 Sept 2016
-                          </p>
-                          <p class="pull-right"><i class="icon-comment pull"></i> Rp 100.000 / Hari </a></p>
-                      </div>
-                      <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" width="100%" alt="" /></p>
-                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, </p>
-                      <!-- <a class="btn btn-link" href="#">Read More <i class="icon-angle-right"></i></a> -->
-                      <button type="button" class="btn btn-primary">Booking</button>
-                      <button type="button" class="btn btn-primary">Detail</button>
 
-                  </div>
-                  </div>
 
-                  <div class="span5">
-                    <div class="blog-item well">
-                        <a href="#"><h4><b>AVANZA 2007</b></h4></a>
-                        <div class="blog-meta clearfix">
-                            <p class="pull-left">
-                              <i class="icon-user"></i> by <a href="#">Carter Sby</a> | <i class="icon-folder-close"></i> Category <a href="#">Mobil</a> | <i class="icon-calendar"></i> 12 Sept 2016 - 14 Sept 2016
-                          </p>
-                          <p class="pull-right"><i class="icon-comment pull"></i> Rp 100.000 / Hari </a></p>
-                      </div>
-                      <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" width="100%" alt="" /></p>
-                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, </p>
-                      <!-- <a class="btn btn-link" href="#">Read More <i class="icon-angle-right"></i></a> -->
-                      <button type="button" class="btn btn-primary">Booking</button>
-                      <button type="button" class="btn btn-primary">Detail</button>
-
-                  </div>
-                  </div>
-
-                  <div class="span5">
-                    <div class="blog-item well">
-                        <a href="#"><h4><b>AVANZA 2007</b></h4></a>
-                        <div class="blog-meta clearfix">
-                            <p class="pull-left">
-                              <i class="icon-user"></i> by <a href="#">Carter Sby</a> | <i class="icon-folder-close"></i> Category <a href="#">Mobil</a> | <i class="icon-calendar"></i> 12 Sept 2016 - 14 Sept 2016
-                          </p>
-                          <p class="pull-right"><i class="icon-comment pull"></i> Rp 100.000 / Hari </a></p>
-                      </div>
-                      <p><img src="<?php echo base_url(); ?>style/images/sample/team1.jpg" width="100%" alt="" /></p>
-                      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, </p>
-                      <!-- <a class="btn btn-link" href="#">Read More <i class="icon-angle-right"></i></a> -->
-                      <button type="button" class="btn btn-primary">Booking</button>
-                      <button type="button" class="btn btn-primary">Detail</button>
-
-                  </div>
-                  </div>
-                  <!-- End Blog Item -->
+                                    <!-- End Blog Item -->
 
               
               <!-- End Blog Item -->

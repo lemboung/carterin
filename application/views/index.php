@@ -40,37 +40,33 @@ require('css.php');
                                 <form class="form-search" action="<?php echo base_url(); ?>/Cari/prosesPencarian" method="post" id="form-login">
                                     <h3><b>Cari Mobil</b></h3>
                                     <div class="form-group">
-                                        <input type="text" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
+                                        <input type="text" name="cari" class="input-block-level" placeholder="Search..." style="width:98%; margin-left:2%; margin-right:10%;">
                                       </div>
                                     <div class="form-group tes">
                                         <input type="date" name="awal" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
                                       </div>
                                       <div class="form-group tes">
-                                        <input type="date" class="input-block-level" placeholder="Tanggal Ambil" style="width:100%;">
+                                        <input type="date" name="akhir" class="input-block-level" placeholder="Tanggal" style="width:100%;">
                                       </div>
                                       <div class="form-group tes">
-                                        <select class="form-control" style="width: 100%;">
-                                          <option selected="selected">Tipe</option>
-                                          <option>Alaska</option>
-                                          <option>California</option>
-                                          <option>Delaware</option>
-                                          <option>Tennessee</option>
-                                          <option>Texas</option>
-                                          <option>Washington</option>
+                                        <select name="jenis" class="form-control" style="width: 100%;">
+                                          <option selected="selected">Jenis</option>
+                                          <option>Kendaraan Besar</option>
+                                          <option>Mobil</option>
+                                          <option>Motor</option>
                                         </select>
                                       </div>
                                       <div class="form-group tes">
-                                        <select class="form-control" style="width: 100%;">
-                                          <option selected="selected">Tahun</option>
-                                          <option>Alaska</option>
-                                          <option>California</option>
-                                          <option>Delaware</option>
-                                          <option>Tennessee</option>
-                                          <option>Texas</option>
-                                          <option>Washington</option>
+                                        <select name="kota" class="form-control" style="width: 100%;">
+                                          <option selected="selected">Kota</option>
+                                          
+                                          <option>Surabaya</option>
+                                          <option>Malang</option>
+                                          <option>Jakarta</option>
+                                          <option>Yogyakarta</option>
                                         </select>
                                       </div>
-                                      <br>                   <br>
+                                      <!-- <br>                   <br>
                                       <br>                                      <br>
                                       <br>
                                       <div class="form-group tes">
@@ -79,7 +75,7 @@ require('css.php');
                                         antar  <input type="checkbox" class="form-chceckbox" id="exampleInputEmail1" name="antar" style="float:none;">
 
                                       </div>
-
+ -->
                                     <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="jenis">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="merek">
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="tipe">
