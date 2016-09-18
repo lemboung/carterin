@@ -48,7 +48,7 @@
             <img src="<?php echo base_url()."images/member".$foto ?>" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p><?php echo $username</p>
+            <p><?php echo $username; ?></p>
           </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->

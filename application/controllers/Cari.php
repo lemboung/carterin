@@ -21,6 +21,7 @@ class Cari extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('ModelUser');
+		$this->load->model('Cmodel');
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -33,8 +34,18 @@ class Cari extends CI_Controller {
 	}
 
 	public function prosesPencarian(){
-		$awal = $this->input->post('awal');
-		$day = date('Y', strtotime($awal));
-		echo "$day";
+		$cari['cari'] = $this->input->post('cari');
+		$cari['awal'] = $this->input->post('awal');
+		$cari['akhir'] = $this->input->post('akhir');
+		$cari['jenis'] = $this->input->post('jenis');
+		$cari['kota'] = $this->input->post('kota');
+		// $day = date('Y', strtotime($awal));
+		$cari['query'] = str_replace(" ", "|", $cari['cari']);
+
+		$data['hasil'] = $this->Cmodel->getCari($cari);
+		// print_r($hasil);
+		$this->load->view('listKendaraan', $data);
+
+
 	}
 }
