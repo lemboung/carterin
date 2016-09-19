@@ -74,12 +74,53 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function updateBlog(){
+		$config['upload_path'] = './images/blog/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = '5000';
+		// $config['max_width'] = '1024';
+		// $config['max_height'] = '768';
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload()){
+			$data['isi'] = $this->input->post('isi');
+			$data['judul'] = $this->input->post('judul');
+
+			$cek = $this->ModelBlog->insert_blog($data);
+			if ($cek == null) {
+				echo "error insert";
+			}
+			redirect(site_url('Admin'));
+		}
+		else {
+			$upload_data = $this->upload->data();
+			$data['gambar'] = $upload_data['file_name'];
+			$data['isi'] = $this->input->post('isi');
+			$data['judul'] = $this->input->post('judul');
+
+			$cek = $this->ModelBlog->insert_blog($data);
+			if ($cek == null) {
+				echo "error insert";
+			}
+			redirect(site_url('Admin'));
+
+		}
+
+	}
+
 	public function viewTambahBlog(){
 		$this->load->view('Admin/form_blog_add');
 	}
 
-	public function viewEditBlog(){
-		$this->load->view('Admin/form_blog_edit');
+	public function viewEditBlog($id){
+		$data['blog'] = $this->ModelBlog->select_by_id($id)->result();
+		$this->load->view('Admin/form_blog_edit', $data);
+	}
+
+	public function deleteBlog($id){
+		$this->ModelBlog->delete_blog($id);
+		redirect(site_url('Admin'));
 	}
 
 	public function viewTableMember(){
@@ -103,7 +144,7 @@ class Admin extends CI_Controller {
 
 	public function deletePosting($id){
 		$this->ModelPosting->delete_posting($id);
-		redirect(site_url('Admin/viewTableMember'));
+		redirect(site_url('Admin/viewTablePosting'));
 	}
 
 }

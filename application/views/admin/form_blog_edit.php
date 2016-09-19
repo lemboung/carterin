@@ -117,18 +117,19 @@
         </section>
         <!-- /.sidebar -->
       </aside>
+
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Edit Blog
+            Tambah Blog
             <!-- <small>Preview</small> -->
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <!-- <li><a href="#">Edit & Hapus Blog</a></li> -->
-            <li class="active">Edit Blog</li>
+            <li><a href="#">Insert</a></li>
+            <li class="active">Tambah Blog</li>
           </ol>
         </section>
 
@@ -140,70 +141,42 @@
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Edit Blog</h3>
+                  <h3 class="box-title">Tambah Blog</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="POST" action="<?php echo base_url()."kelola_blog/do_update"; ?>" enctype="multipart/form-data">
-                  <input type="text" name="id_paket" value="<?php echo "$data[id_paket]"; ?>" hidden/>
+                <!-- <form role="form" method="POST" action="<?php echo base_url(); ?>index.php/Admin/tambahBlog" enctype="multipart/form-data"> -->
+                <?php echo form_open_multipart('Admin/tambahBlog');?>
                   <div class="box-body">
+                    <?php foreach ($blog as $b) {?>
                     <div class="form-group">
                       <label>Judul Blog</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Blog" name="nama_paket" value="<?php echo "$data[nama_paket]"; ?>" required>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="judul" value="<?php echo $b->judul; ?>" required>
                     </div>
-                    <!-- <div class="form-group">
-                      <label>Kategori Blog</label>
-                      <br><small><?php echo "Kategori Blog sebelum diupdate: <b>".$data['kategori_paket']."</b>" ?></small>
-                      <select class="form-control" name="kategori_paket">
-                        <?php foreach ($data2 as $d) {
-                          echo "<option value='$d[id_kategori_paket]'>$d[kategori_paket]</option>";
-                        } ?>
-                      </select>
-                    </div> -->
+
                     <!-- Ganti CK Editor -->
                     <div class="form-group">
                       <label>Isi Blog</label>
-                      <!-- <textarea class="form-control" rows="3" placeholder="Masukkan Isi Paket" name="isi_paket"><?php echo "$data[isi_paket]"; ?></textarea> -->
-                      <textarea id="editor1" name="isi_paket" rows="10" cols="80">
-                        <?php echo "$data[isi_paket]"; ?>
+                      <!-- <textarea class="form-control" rows="3" placeholder="Isi Blog..." name="isi"></textarea> -->
+                      <textarea id="editor1" name="isi" rows="10" cols="80">
+                            <?php echo $b->isi; ?>
                       </textarea>
                     </div>
                     <div class="form-group">
                       <label>Gambar Blog</label>
                       <?php
-                      	$i = 0;
-                      	foreach ($data3 as $d3) {
-                      		if ($i == 0 && $d3["pict_paket"] != "no image") {
-                      ?>
-                      			<center><br><img src="<?php echo base_url("/style/image/gallery/$d3[pict_paket]"); ?>" style="height: 100px; width: 100px"><br><small>preview image</small><br></center>
-                      			<input type="file" id="exampleInputFile" name="gambar_paket_ke<?php echo "$i"; ?>">
-                      			<input type="text" name="id_pict_paket<?php echo $i; ?>" value="<?php echo "$d3[id_pict_paket]"; ?>" hidden/>
-                      <?php
-                      		} elseif ($i > 0 && $d3["pict_paket"] != "no image") {
-                      ?>
-                      			<center><br><img src="<?php echo base_url("/style/image/gallery/$d3[pict_paket]"); ?>" style="height: 100px; width: 100px"><br><small>preview image</small><br></center>
-                      			<input type="file" id="exampleInputFile" name="gambar_paket_ke<?php echo "$i"; ?>">
-                      			<input type="text" name="id_pict_paket<?php echo $i; ?>" value="<?php echo "$d3[id_pict_paket]"; ?>" hidden/>
-                      <?php
-                      		} elseif ($i > 0 && $d3["pict_paket"] == "no image") {
-                      ?>
-                      			<center><br>no image<br><small>preview image</small><br></center>
-                      			<input type="file" id="exampleInputFile" name="gambar_paket_ke<?php echo "$i"; ?>">
-                      			<input type="text" name="id_pict_paket<?php echo $i; ?>" value="<?php echo "$d3[id_pict_paket]"; ?>" hidden/>
-                      <?php
-                      		}
-                      		$i++;
-                      	}
-                      ?>
-                      <!--<?php for ($i=0; $i < 4; $i++) { ?>
-                        <?php if ($i == 0) { ?>
-                          <input type="file" id="exampleInputFile" name="gambar_paket_ke<?php echo "$i"; ?>" required>
-                        <?php } else { ?>
-                          <input type="file" id="exampleInputFile" name="gambar_paket_ke<?php echo "$i"; ?>">
-                        <?php }?>
-                      <?php } ?>-->
-                    </div>
+                        if ($b->gambar != "no image") { ?>
+                          <br><img src="<?php echo base_url("/images/blog/$b->gambar"); ?>" style="height: 100px; width: 100px"><br><small>preview image</small><br>
+                          <input type="file" id="exampleInputFile" name="gambar">
+                          <p class="help-block">ukuran file max 2MB</p>
+                          <?php
+                        } elseif ($b->gambar == "no image") { ?>
+                          <center><br>no image<br><small>preview image</small><br></center>
+                          <input type="file" id="exampleInputFile" name="gambar">
+                          <p class="help-block">ukuran file max 2MB</p>
+                          <?php } ?>
+                      </div>
                   </div><!-- /.box-body -->
-
+                  <?php } ?>
                   <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
@@ -221,15 +194,9 @@
           <b>Version</b> 2.3.0
         </div> -->
         <!-- <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved. -->
-        <b>Carterin 2016</b>
+        <b>Carterin Resto 2016</b>
       </footer>
-
-      <!-- Control Sidebar -->
-
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
+      </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url()."style/admin/" ?>plugins/jQuery/jQuery-2.1.4.min.js"></script>

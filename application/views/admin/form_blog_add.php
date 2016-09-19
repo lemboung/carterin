@@ -149,16 +149,8 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label>Judul Blog</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Service" name="judul" required>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Judul" name="judul" required>
                     </div>
-                    <!-- <div class="form-group">
-                      <label>Kategori Blog</label>
-                      <select class="form-control" name="kategori_paket">
-                        <?php foreach ($data as $d) {
-                          echo "<option value='$d[id_kategori_paket]'>$d[kategori_paket]</option>";
-                        } ?>
-                      </select>
-                    </div> -->
                     <!-- Ganti CK Editor -->
                     <div class="form-group">
                       <label>Isi Blog</label>
@@ -169,7 +161,7 @@
                     </div>
                     <div class="form-group">
                       <label>Gambar Blog</label>
-                        <input type="file" id="exampleInputFile" name="userfile">
+                        <input type="file" id="exampleInputFile" name="gambar">
                       </div>
                   </div><!-- /.box-body -->
 
