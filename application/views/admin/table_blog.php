@@ -153,7 +153,7 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>id_blog</th>
+                        <th>no/th>
                         <th>Judul Blog</th>
                         <th>Isi blog</th>
                         <th>Waktu terbit</th>
@@ -179,8 +179,8 @@
                               <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                              <li><a href="<?php echo base_url("")."index.php/Admin/viewEditBlog"; ?>">edit</a></li>
-                              <li><a href="#">Delete</a></li>
+                              <li><a href="<?php echo base_url()."/Admin/viewEditBlog/".$blog->id_blog; ?>">edit</a></li>
+                              <li><a href="<?php echo base_url()."/Admin/deleteBlog/".$blog->id_blog;  ?>">Delete</a></li>
                             </ul>
                           </div>
                         </td>
@@ -189,7 +189,7 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>id_blog</th>
+                        <th>no</th>
                         <th>Judul Blog</th>
                         <th>Isi blog</th>
                         <th>Waktu terbit</th>
