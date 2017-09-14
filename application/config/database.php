@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql.idhostinger.com',
-	'username' => 'u519357758_carte',
-	'password' => 'admincarterin',
-	'database' => 'u519357758_carte',
+	'hostname' => 'lemboung.mysql.database.azure.com',
+	'username' => 'lemboung@lemboung',
+	'password' => 'Admin123456m,./',
+	'database' => 'carterin',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
