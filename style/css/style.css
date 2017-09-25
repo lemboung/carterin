@@ -1,33 +1,14 @@
 .form-search {
-	position: absolute;
 	margin: 10px 10px;
-
-}
-.sl-slider{
-	position: relative;
-
-}
-.sl-slider img{
-	width: inherit;
-	height:600px;
-
-
-}
-.dropdown .login {
-	position: absolute;
 }
 
-
-.searching {
-	width: 500px;
-	height: 300px;
-	position:absolute;
+.search {
 	background-color:rgba(255,255,255,0.5);
 	margin-top: 40px;
 	border-radius: 5px;
 	padding: 10px;
 	z-index: 10000;
-	text-align: center	;
+	text-align: center;
 }
 
 .search h3 {
@@ -46,7 +27,7 @@
 .widget-popular .side-bar {
 	margin: 20px;
 
-
+	
 }
 
 .tes {
@@ -54,8 +35,5 @@
 	display: block;
 	float: left;
 }
-.about img {
-	width :200px;
-	height: 200px
 
-}
+

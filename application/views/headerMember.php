@@ -44,7 +44,7 @@ foreach ($member as $m) {
                       <a data-toggle="modal" href="<?php echo base_url()."Member/editAkun" ?>" class="btn btn-primary btn-flat">Edit Akun</a>
                     </div>
                     <div class="pull-right">
-                      <a href="<?php echo base_url(); ?>/login/logout" class="btn btn-danger btn-flat">Sign out</a>
+                      <a href="<?php echo base_url(); ?>/User/logout" class="btn btn-danger btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>

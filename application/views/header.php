@@ -1,48 +1,99 @@
- <header class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a id="logo" class="pull-left" href="index.html"></a>
-                <div class="nav-collapse collapse pull-right">
-                    <ul class="nav">
-                        <li class="home"><a href="<?php echo base_url(); ?>">Home</a></li>
-                        <li class="blog"><a href="<?php echo base_url(); ?>/Halaman">Blog</a></li>
-                        <li class="about"><a href="<?php echo base_url(); ?>/Halaman/viewAbout">About Us</a></li>
-                        <li class="bantuan"><a href="<?php echo base_url(); ?>/Halaman/viewBantuan">Bantuan</a></li>
-                        <?php if ($this->session->userdata('level')==2) {
-                            # code...
-                         ?>
-                        <li><a href="<?php echo base_url(); ?>/Admin">Kelola Admin</a></li>
-                        <?php
-                            }
-                            if ($this->session->userdata('level')==1) {
-                                # code...
 
-                         ?><li><a href="<?php echo base_url(); ?>/Member/viewKelolaMobil">Kelola Bisnis</a></li>
-                        <?php
-                            }
-                            if ($this->session->userdata('level')==null) {
-                                # code...
-
-                         ?>
-                        <li class="login">
-                            <a data-toggle="modal" href="#loginForm"><i class="icon-lock"> login</i></a>
-                        </li>
-                        <?php }else { ?>
-                        <li class="dropdown login">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata('username'); ?>
-                            <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url(); ?>/login/logout">Logout</a></li>
-                            </ul>
-                        </li>
-                        <?php } ?>
-                    </ul>
-                </div><!--/.nav-collapse -->
+<div class="wheel-menu-wrap ">
+    <div class="container-fluid wheel-bg1">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="wheel-logo">
+                    <a href="index.html"><img src="<?php echo base_url() ?>images/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-sm-9 col-xs-12 padd-lr0">
+                <div class="wheel-top-menu clearfix">
+                    <div class="wheel-top-menu-info">
+                        <div class="top-menu-item"><a href=""><i class="fa fa-phone"></i><span>(+62) 123123123</span></a></div>
+                        <div class="top-menu-item"><a href=""><i class="fa fa-envelope"></i><span>contact@carterin.com</span></a></div>
+                    </div>
+                    <div class="wheel-top-menu-log">
+                        <div class="top-menu-item">
+                            <div class="dropdown wheel-user-ico">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <?php if ($this->session->has_userdata('username')) {
+                                        echo $this->session->userdata('username');
+                                    }else {
+                                        echo "Account";
+                                    } ?>
+                                    <span class="caret"></span>
+                                    </button>
+                                <ul class="dropdown-menu">
+                                    <?php if ($this->session->has_userdata('username')) {
+                                        if ($this->session->userdata('level')==2) {
+                                            echo "<li><a href=\"".base_url('Admin')."\" >Kelola kendaraan</a></li>";
+                                            echo "<li><a href=\"".base_url('User/logout')."\" >Logout</a></li>";
+                                        }else{
+                                        echo "<li><a href=\"".base_url('Member')."\" >Kelola kendaraan</a></li>";
+                                        echo "<li><a href=\"".base_url('User/logout')."\" >Logout</a></li>";
+                                        }
+                                    } else{
+                                        echo "<li><a data-toggle=\"modal\" data-target=\"#myModal\">Login</a></li>";
+                                        echo "<li><a data-toggle=\"modal\" data-target=\"#myModal\">Register</a></li>";
+                                    }?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="top-menu-item">
+                            <div class="dropdown wheel-lang-ico">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Id
+                                    <span class="caret"></span>
+                                    </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Eng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="top-menu-item">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    IDR
+                                    <span class="caret"></span>
+                                    </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">USD</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 ">
+                <div class="wheel-navigation">
+                    <nav id="dl-menu">
+                        <!-- class="dl-menu" -->
+                        <ul class="main-menu dl-menu">
+                            <li class="menu-item   current-menu-parent menu-item-has-children   active-color ">
+                                <a href="<?php echo base_url() ?>">Beranda</a>
+                            </li>
+                            <li class="menu-item current-menu-parent menu-item-has-children  ">
+                                <a href="#">Cara Kerja</a>
+                                <!--class=" dl-submenu "-->
+                            </li>
+                            <li class="menu-item   ">
+                                <a href="<?php echo base_url("halaman/daftar") ?>">Gabung</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children  ">
+                                <a href="#">Testimonial</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children  ">
+                                <a href="<?php echo base_url("halaman") ?>">Blog</a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="<?php echo base_url("halaman/about"); ?>">Tentang</a>
+                            </li>
+                        </ul>
+                        <div class="nav-menu-icon"><i></i></div>
+                    </nav>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+</div>

@@ -18,7 +18,7 @@ class Member extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
+		function __construct(){
 		parent::__construct();
 		$this->load->model('ModelUser');
 		$this->load->model('ModelPosting');
@@ -32,6 +32,7 @@ class Member extends CI_Controller {
 
 	public function index(){
 		$id = $this->session->userdata('id_member');
+		$data['member'] = $this->ModelUser->get_user($id)->result();
 		$data['posting'] = $this->ModelPosting->select_member_mobil($id)->result();
 		$this->load->view('kelolaKendaraan', $data);
 	}
@@ -261,8 +262,4 @@ class Member extends CI_Controller {
 		$this->load->view('kelolaJadwal');
 	}
 
-	
-
-
-
-}
+	}

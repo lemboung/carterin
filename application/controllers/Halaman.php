@@ -18,6 +18,14 @@ class Halaman extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function __construct(){
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
 		$this->load->view('blog');
@@ -31,8 +39,12 @@ class Halaman extends CI_Controller {
 		$this->load->view('bantuan');
 	}
 
-	public function viewAbout(){
-		$this->load->view('aboutUs');
+	public function daftar(){
+		$this->load->view('register');
+	}
+
+	public function about(){
+		$this->load->view('about');
 	}
 
 

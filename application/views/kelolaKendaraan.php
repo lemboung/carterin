@@ -21,12 +21,6 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url()."style/admin/" ?>dist/css/skins/_all-skins.min.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -162,10 +156,6 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
-        <!-- <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
-        </div> -->
-        <!-- <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved. -->
         <b>carterin  2016</b>
       </footer>
 

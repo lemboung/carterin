@@ -193,7 +193,7 @@
           <b>Version</b> 2.3.0
         </div> -->
         <!-- <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved. -->
-        <b>carterin Resto 2016</b>
+        <b>carterin 2016</b>
       </footer>
 
       <!-- Control Sidebar -->
