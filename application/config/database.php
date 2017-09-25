@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'lemboung.mysql.database.azure.com',
-	'username' => 'lemboung@lemboung',
-	'password' => 'Admin123456m,./',
+	'hostname' => 'lemboungmysql.mysql.database.azure.com',
+	'username' => 'lemboung@lemboungmysql',
+	'password' => 'Lem0909m,./',
 	'database' => 'carterin',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
